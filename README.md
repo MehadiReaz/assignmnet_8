@@ -1,16 +1,5 @@
 # assignmnet_8
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_1687642490](https://github.com/MehadiReaz/assignmnet_8/assets/65062761/24ed9444-9949-4735-a230-e972d9de7dbf)
+![Screenshot_1687642510](https://github.com/MehadiReaz/assignmnet_8/assets/65062761/29a5efbc-7db6-4579-8e41-5149d309710b)
+![Screenshot_1687642498](https://github.com/MehadiReaz/assignmnet_8/assets/65062761/8ecc9380-6511-4b40-8693-a0daa4db7d59)
