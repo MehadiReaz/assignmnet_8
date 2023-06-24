@@ -55,6 +55,7 @@ class _TaskListState extends State<TaskList> {
                 controller: dateEditingController,
                 decoration: const InputDecoration(
                     hintText: 'Days Required', border: OutlineInputBorder()),
+                keyboardType: TextInputType.number,
               ),
               const SizedBox(
                 height: 10,
