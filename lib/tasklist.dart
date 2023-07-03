@@ -74,44 +74,44 @@ class _TaskListState extends State<TaskList> {
     );
   }
 
-  void _showModalBottomSheet(int index) {
-    showModalBottomSheet(
-        context: context,
-        builder: (BuildContext context) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Task Details',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'Title: ${tasklist[index].title}',
-                    style: const TextStyle(fontSize: 17),
-                  ),
-                  Text(
-                    'Description: ${tasklist[index].description}',
-                    style: const TextStyle(fontSize: 17),
-                  ),
-                  Text(
-                    'Days Required: ${tasklist[index].daysReq}',
-                    style: const TextStyle(fontSize: 17),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      deleteTask(index);
-                    },
-                    child: const Text('Delete'),
-                  )
-                ],
-              ),
+  void _showBottomSheet(BuildContext context, int index) {
+    Scaffold.of(context).showBottomSheet(
+        //context: context,
+        (context) {
+      return Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Task Details',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
-          );
-        });
+            Text(
+              'Title: ${tasklist[index].title}',
+              style: const TextStyle(fontSize: 17),
+            ),
+            Text(
+              'Description: ${tasklist[index].description}',
+              style: const TextStyle(fontSize: 17),
+            ),
+            Text(
+              'Days Required: ${tasklist[index].daysReq}',
+              style: const TextStyle(fontSize: 17),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                deleteTask(index);
+              },
+              child: const Text('Delete'),
+            )
+          ],
+        ),
+      );
+    });
   }
 
   void addTask() {
@@ -143,6 +143,9 @@ class _TaskListState extends State<TaskList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Center(child: Text('Task Management')),
+      ),
       body: ListView.builder(
         itemCount: tasklist.length,
         itemBuilder: (context, index) {
@@ -150,7 +153,7 @@ class _TaskListState extends State<TaskList> {
             children: [
               Card(
                 child: ListTile(
-                  onLongPress: () => _showModalBottomSheet(index),
+                  onLongPress: () => _showBottomSheet(context, index),
                   title: Text(tasklist[index].title),
                   subtitle: Text(tasklist[index].description),
                 ),
